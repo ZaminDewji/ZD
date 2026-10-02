@@ -264,7 +264,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`TallyLite TZS Server running on http://localhost:${PORT}`);
+    console.log(`The System Anchor Server running on http://localhost:${PORT}`);
   });
 }
 

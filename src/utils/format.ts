@@ -88,7 +88,7 @@ export function downloadInventoryTemplateExcel() {
   ];
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Inventory_And_Services');
-  XLSX.writeFile(workbook, 'TallyLite_Inventory_Services_Template.xlsx');
+  XLSX.writeFile(workbook, 'The_System_Anchor_Inventory_Services_Template.xlsx');
 }
 
 export function downloadPartyTemplateExcel() {
@@ -130,7 +130,7 @@ export function downloadPartyTemplateExcel() {
   ];
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Customers_And_Suppliers');
-  XLSX.writeFile(workbook, 'TallyLite_Customers_Suppliers_Template.xlsx');
+  XLSX.writeFile(workbook, 'The_System_Anchor_Customers_Suppliers_Template.xlsx');
 }
 
 export function exportJsonToExcel(filename: string, sheetName: string, rows: Record<string, any>[]) {

@@ -14,7 +14,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     try {
-      const saved = localStorage.getItem('tallylite_tzs_theme');
+      const saved = localStorage.getItem('anchor_theme') || localStorage.getItem('tallylite_tzs_theme');
       if (saved === 'dark' || saved === 'light') return saved;
     } catch {
       // ignore storage errors
@@ -24,7 +24,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     try {
-      localStorage.setItem('tallylite_tzs_theme', theme);
+      localStorage.setItem('anchor_theme', theme);
     } catch {
       // ignore
     }

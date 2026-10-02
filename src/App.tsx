@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { onAuthStateChanged, signInWithPopup, signOut, User } from 'firebase/auth';
 import {
+  Anchor,
   LayoutDashboard,
   ShoppingBag,
   Calendar,
@@ -77,7 +78,7 @@ type NavTab =
   | 'import'
   | 'audit_settings';
 
-function TallyLiteShell() {
+function TheSystemAnchorShell() {
   const { isDark, toggleTheme, setTheme } = useTheme();
   const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
@@ -424,10 +425,10 @@ function TallyLiteShell() {
         }`}
       >
         <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-700 flex items-center justify-center text-white font-bold">
-            TZS
+          <div className="w-12 h-12 rounded-2xl bg-emerald-700 flex items-center justify-center text-white shadow-xs">
+            <Anchor className="w-6 h-6 text-white" />
           </div>
-          <p className="text-sm font-medium opacity-75">Opening your business ledger...</p>
+          <p className="text-sm font-medium opacity-75">Opening The System Anchor ledger...</p>
         </div>
       </div>
     );
@@ -443,11 +444,11 @@ function TallyLiteShell() {
       >
         <header className="max-w-6xl w-full mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-emerald-700 flex items-center justify-center text-white font-bold font-mono-num text-sm shadow-xs">
-              TZS
+            <div className="w-11 h-11 rounded-2xl bg-emerald-700 flex items-center justify-center text-white shadow-xs">
+              <Anchor className="w-6 h-6 text-white" />
             </div>
             <div>
-              <span className="font-display font-semibold text-xl">TallyLite TZS</span>
+              <span className="font-display font-semibold text-xl">The System Anchor</span>
               <span className="block text-xs opacity-65">
                 Simple Shop, Services & Booking Manager
               </span>
@@ -552,7 +553,7 @@ function TallyLiteShell() {
         </main>
 
         <footer className="max-w-6xl w-full mx-auto text-center text-sm opacity-60">
-          TallyLite TZS · Friendly Retail, Services & Booking Management
+          The System Anchor · Friendly Retail, Services & Booking Management
         </footer>
       </div>
     );
@@ -943,14 +944,16 @@ function TallyLiteShell() {
         <div className="overflow-y-auto">
           <div className="px-6 py-5 border-b border-slate-200 dark:border-[#252B37] flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-emerald-700 text-white font-mono-num font-bold text-xs flex items-center justify-center shadow-xs">
-                TZS
+              <div className="w-10 h-10 rounded-2xl bg-emerald-700 text-white flex items-center justify-center shadow-xs shrink-0">
+                <Anchor className="w-5 h-5 text-white" />
               </div>
               <div className="min-w-0">
                 <div className="font-display font-semibold text-base leading-snug truncate">
-                  {settings?.businessName || 'Kariakoo Glow & Retail Hub'}
+                  The System Anchor
                 </div>
-                <div className="text-xs opacity-65">Simple Retail & Spa ERP</div>
+                <div className="text-xs opacity-65 truncate">
+                  {settings?.businessName || 'Retail & Spa ERP'}
+                </div>
               </div>
             </div>
             <button
@@ -1055,7 +1058,7 @@ function TallyLiteShell() {
                   {activeNavItem?.label || 'Overview'}
                 </h1>
                 <p className="text-xs opacity-65 hidden sm:block">
-                  TZS Currency · {settings?.businessName || 'Kariakoo Glow'}
+                  The System Anchor · {settings?.businessName || 'Kariakoo Glow'}
                 </p>
               </div>
             </div>
@@ -4291,7 +4294,7 @@ function TallyLiteShell() {
 export default function App() {
   return (
     <ThemeProvider>
-      <TallyLiteShell />
+      <TheSystemAnchorShell />
     </ThemeProvider>
   );
 }

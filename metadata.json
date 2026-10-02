@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix TallyLite TZS — Unified Retail \u0026 Spa Accounting ERP",
+  "description": "User-friendly TallyPrime-grade accounting, POS, inventory, ledger, credit receivable/payable, Excel import, and multi-item spa booking system in Tanzanian Shillings (TZS).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

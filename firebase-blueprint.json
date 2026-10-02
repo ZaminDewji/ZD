@@ -1,0 +1,81 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Authenticated workspace owner profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "activeRoleView": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "uid", "email", "name", "role"]
+    },
+    "AppSetting": {
+      "title": "AppSetting",
+      "description": "Business workspace configuration and backup schedule",
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "ownerUid": { "type": "string" },
+        "businessName": { "type": "string" },
+        "currency": { "type": "string" },
+        "openingCash": { "type": "string" },
+        "bookingEnabled": { "type": "boolean" },
+        "theme": { "type": "string" },
+        "backupEnabled": { "type": "boolean" },
+        "backupFrequency": { "type": "string" },
+        "backupDayOfWeek": { "type": "string" },
+        "backupTime": { "type": "string" },
+        "backupBucketUri": { "type": "string" },
+        "backupRetentionDays": { "type": "integer" },
+        "nextBackupAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "ownerUid", "businessName", "currency"]
+    },
+    "CatalogItem": {
+      "title": "CatalogItem",
+      "description": "Unified product and service catalog item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "ownerUid": { "type": "string" },
+        "name": { "type": "string" },
+        "itemType": { "type": "string" },
+        "unit": { "type": "string" },
+        "sku": { "type": "string" },
+        "category": { "type": "string" },
+        "costPrice": { "type": "string" },
+        "sellingPrice": { "type": "string" },
+        "openingStock": { "type": "integer" },
+        "purchasedQty": { "type": "integer" },
+        "soldQty": { "type": "integer" },
+        "adjustedQty": { "type": "integer" },
+        "currentStock": { "type": "integer" },
+        "reorderLevel": { "type": "integer" },
+        "durationMins": { "type": "integer" },
+        "isDeleted": { "type": "boolean" }
+      },
+      "required": ["id", "ownerUid", "name", "itemType"]
+    }
+  },
+  "firestore": {
+    "/users/{docId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Workspace user profiles"
+    },
+    "/app_settings/{docId}": {
+      "schema": { "$ref": "#/entities/AppSetting" },
+      "description": "Workspace settings per ownerUid"
+    },
+    "/catalog_items/{docId}": {
+      "schema": { "$ref": "#/entities/CatalogItem" },
+      "description": "Catalog items per ownerUid"
+    }
+  }
+}
